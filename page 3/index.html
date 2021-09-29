@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="content">
+        <div class="team">
+            <h1>Our Team</h1>
+        </div>
+        <div class="container">
+            <div id="profil">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Font_Awesome_5_solid_user-circle.svg/991px-Font_Awesome_5_solid_user-circle.svg.png">
+                <h4 id="name">Anggitri Sihombing</h4>
+                <h6>Front End</h6>
+            </div>
+            <div id="bio">
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            </div>
+            <div class="btn">
+                <button href="" class="previous round">&#8249;</button>
+                <button href="" class="next round">&#8250;</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        const name = ["Anggitri Sihombing", "Aprilia Khoirunnisa", "Sabrina Lydia Simanjuntak", "Brianita Susandzya"]
+
+        const elPrevBtn = document.querySelector(".previous")
+        const elNextBtn = document.querySelector(".next")
+
+        let i = 0
+        elNextBtn.addEventListener('click', function(){
+            const team = document.querySelector("#name");
+            if(i>=name.length-1){
+                i = name.length-1
+                team.innerHTML = name[i]
+            } else{
+                i+=1
+                team.innerHTML = name[i]
+            }
+        })
+        elPrevBtn.addEventListener('click', function(){
+            const team = document.querySelector("#name");
+            if(i<=0){
+                i = 0
+                team.innerHTML = name[i]
+            } else{
+                i-=1
+                team.innerHTML = name[i]
+            }
+})
+    </script>
+</body>
+</html>
